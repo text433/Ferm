@@ -7,21 +7,29 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div id="game-shell">
-    <div id="hud">
-      <div><strong>Ferma</strong></div>
-      <div>Monētas: <span id="coins">100</span></div>
-      <div>Enerģija: <span id="energy">100</span></div>
-    </div>
-    <canvas id="game" width="960" height="540"></canvas>
-    <div id="controls">
-      <div class="dpad">
-        <button data-key="ArrowUp">▲</button>
-        <div><button data-key="ArrowLeft">◀</button><button data-key="ArrowDown">▼</button><button data-key="ArrowRight">▶</button></div>
+  <main id="game-shell">
+    <section id="hud" aria-label="Spēles informācija">
+      <div class="brand"><b>FERMA</b><span>1. diena · Rīts</span></div>
+      <div class="stats">
+        <div class="pill">🪙 <span id="coins">100</span></div>
+        <div class="pill">⚡ <span id="energy">100</span></div>
+        <div class="pill crop">🌱 <span id="seeds">12</span></div>
       </div>
-      <button id="action">Darbība</button>
-    </div>
-  </div>
+    </section>
+
+    <section id="viewport">
+      <canvas id="game" width="960" height="540" aria-label="Ferma 2D spēle"></canvas>
+      <div id="hint">Pieej pie dobes un spied <b>Darbība</b></div>
+    </section>
+
+    <section id="controls" aria-label="Mobilā vadība">
+      <div class="dpad">
+        <button data-key="ArrowUp" aria-label="Uz augšu">▲</button>
+        <div><button data-key="ArrowLeft" aria-label="Pa kreisi">◀</button><button data-key="ArrowDown" aria-label="Uz leju">▼</button><button data-key="ArrowRight" aria-label="Pa labi">▶</button></div>
+      </div>
+      <button id="action">🌱<span>Darbība</span></button>
+    </section>
+  </main>
   <script src="main.js"></script>
 </body>
 </html>
