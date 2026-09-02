@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="lv">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" />
+  <title>Ferma</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="game-shell">
+    <div id="hud">
+      <div><strong>Ferma</strong></div>
+      <div>Monētas: <span id="coins">100</span></div>
+      <div>Enerģija: <span id="energy">100</span></div>
+    </div>
+    <canvas id="game" width="960" height="540"></canvas>
+    <div id="controls">
+      <div class="dpad">
+        <button data-key="ArrowUp">▲</button>
+        <div><button data-key="ArrowLeft">◀</button><button data-key="ArrowDown">▼</button><button data-key="ArrowRight">▶</button></div>
+      </div>
+      <button id="action">Darbība</button>
+    </div>
+  </div>
+  <script src="main.js"></script>
+</body>
+</html>
