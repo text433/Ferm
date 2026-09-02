@@ -1,0 +1,1 @@
+window.SPROUT_ASSETS={grass:'assets/grass.png',water:'assets/water.png',trees:'assets/trees.png',plants:'assets/plants.png',character:'assets/character.png',coins:'assets/coins.png',buttons:'assets/buttons.png'};
