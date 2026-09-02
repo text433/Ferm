@@ -1,0 +1,39 @@
+name: Ferma Test
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  smoke-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Check JavaScript syntax
+        run: |
+          node --check spele/main.js
+          node --check spele/sprout-render.js
+
+      - name: Verify required game files
+        run: |
+          test -f spele/index.html
+          test -f spele/style.css
+          test -f spele/main.js
+          test -f spele/sprout-render.js
+          test -f spele/zale/grass.png
+          test -f spele/udens/water.png
+          test -f spele/koki/tree.png
+          test -f spele/characters/player.png
+
+      - name: Verify Sprout renderer is loaded
+        run: grep -q 'sprout-render.js' spele/index.html
+
+      - name: Verify farming gameplay hooks
+        run: |
+          grep -q 'function action' spele/main.js
+          grep -q 'plots' spele/main.js
+          grep -q 'blocked' spele/main.js
